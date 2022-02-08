@@ -12,11 +12,11 @@ getNome(nome, _, _) = nome
 getValor :: ([Char], Int, Int) -> Int
 getValor(_, valor, _) = valor
 
-getValorCarrinho :: ([Char], Int) -> Int
-getValorCarrinho(_, valor) = valor
-
 getQuantidade :: ([Char], Int, Int) -> Int
 getQuantidade(_, _, quantidade) = quantidade
+
+getValorCarrinho :: ([Char], Int) -> Int
+getValorCarrinho(_, valor) = valor
 
 -- inicializando o estoque
 monitorEstoque :: ProdutoEstoque
@@ -58,7 +58,7 @@ tecladoCarrinho :: ProdutoCarrinho
 tecladoCarrinho = adicionaProduto tecladoEstoque 2
 
 updateTeclado :: ProdutoEstoque
-updateTeclado = updateProdutoEstoque tecladoEstoque 5
+updateTeclado = updateProdutoEstoque tecladoEstoque 2
 
 carrinho :: CarrinhoCompra
 carrinho = [monitorCarrinho, telefoneCarrinho, tecladoCarrinho]
@@ -74,4 +74,5 @@ main = do
 
     putStrLn "total:"
     print totalCompra
-    print estoque
+    --print estoque
+    --print estoqueFinal
